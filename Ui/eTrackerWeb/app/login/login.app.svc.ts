@@ -17,7 +17,7 @@
         }
 
         signIn(): ng.resource.IResourceClass<IUserResource> {
-            return this.$resource("http://localhost:9694/api/ExpenseTracker/SignIn?user=:obj HTTP/1.1", {}, {
+            return this.$resource("http://localhost/eTracker/api/ExpenseTracker/SignIn?user=:obj", {}, {
                 query: {method: "GET", headers: {"Content-Type": "application/json"}}});
         }
 

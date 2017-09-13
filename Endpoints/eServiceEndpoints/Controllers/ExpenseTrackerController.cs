@@ -80,26 +80,27 @@ namespace eServiceEndpoints.Controllers
         /// User not found;UserDefined
         /// </exception>
         [HttpGet]
-        public ExpenseTrackerResponse SignIn([FromUri] testuser user)
+        public ExpenseTrackerResponse SignIn([FromUri] string user)
         {
-            //var userPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data//Users.Json");
-            //DataSerializer.JsonPath = userPath;
-            //try
-            //{
-            //    var userList = DataSerializer.JsonDserializerFromFile<List<Users>>();
-            //    if (userList.Count(x => x.Email.ToLower() == user.Email.ToLower()) > 0)
-            //    {
-            //        return userList.Count(x => string.Equals(x.Email, user.Email, StringComparison.CurrentCultureIgnoreCase) && x.Password == user.Password) > 0 ?
-            //            new ExpenseTrackerResponse(userList.FirstOrDefault(x => string.Equals(x.Email, user.Email, StringComparison.CurrentCultureIgnoreCase) && x.Password == user.Password))
-            //            : new ExpenseTrackerResponse(ResponseCode.WrongUserIdOrPassword);
-            //    }
-            //    return new ExpenseTrackerResponse(ResponseCode.UserNotFound);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ExpenseTrackerResponse { StatusCode = ResponseCode.ContactAdmin, StatusMessage = ExpenseTrackerResponse.GetStatustextBasedOnStatusCode(ResponseCode.ContactAdmin), StatusDescription = ex.Message.ToString() };
-            //}
-          return  new ExpenseTrackerResponse { StatusCode = ResponseCode.ContactAdmin, StatusMessage = ExpenseTrackerResponse.GetStatustextBasedOnStatusCode(ResponseCode.ContactAdmin), StatusDescription = "GHANTA" };
+            var userPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data//Users.Json");
+            DataSerializer.JsonPath = userPath;
+            try
+            {
+                var paramUser = DataSerializer.JsonDserializer<Users>(user);
+                var userList = DataSerializer.JsonDserializerFromFile<List<Users>>();
+                if (userList.Count(x => String.Equals(x.Email, paramUser.Email, StringComparison.CurrentCultureIgnoreCase)) > 0)
+                {
+                    return userList.Count(x => string.Equals(x.Email, paramUser.Email, StringComparison.CurrentCultureIgnoreCase) && x.Password == paramUser.Password) > 0 ?
+                        new ExpenseTrackerResponse(userList.FirstOrDefault(x => string.Equals(x.Email, paramUser.Email, StringComparison.CurrentCultureIgnoreCase) && x.Password == paramUser.Password))
+                        : new ExpenseTrackerResponse(ResponseCode.WrongUserIdOrPassword);
+                }
+                return new ExpenseTrackerResponse(ResponseCode.UserNotFound);
+            }
+            catch (Exception ex)
+            {
+                return new ExpenseTrackerResponse { StatusCode = ResponseCode.ContactAdmin, StatusMessage = ExpenseTrackerResponse.GetStatustextBasedOnStatusCode(ResponseCode.ContactAdmin), StatusDescription = ex.Message.ToString() };
+            }
+           
         }
 
         /// <summary>
@@ -116,9 +117,4 @@ namespace eServiceEndpoints.Controllers
         }
     }
 
-    public class testuser
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
 }
