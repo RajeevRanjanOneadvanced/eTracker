@@ -18,7 +18,7 @@ module etracker.route {
                     loadLoginModule: function($ocLazyLoad: oc.ILazyLoad): any {
                         return $ocLazyLoad.load({
                             serie: true,
-                            files: ["app/login/login.app.svc.js",
+                            files: ["styles/login.app.css", "app/login/login.app.svc.js",
                         "app/login/login.app.ctrl.js"],
                     }); },
                  },
