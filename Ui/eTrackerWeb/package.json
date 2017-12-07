@@ -19,21 +19,28 @@
     "bootstrap-css-only": "^3.3.7",
     "ng-resource": "^1.3.2",
     "oclazyload": "^1.1.0",
+    "protractor": "^5.2.0",
     "typescript": "^2.5.2"
   },
   "devDependencies": {
     "@types/angular": "^1.6.32",
     "@types/angular-resource": "^1.5.14",
     "@types/angular-ui-router": "^1.1.37",
+    "@types/jasmine": "^2.8.2",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/node": "^8.0.55",
     "@types/oclazyload": "0.0.32",
+    "@types/selenium-webdriver": "^3.0.8",
     "concurrently": "^3.5.0",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-protractor-runner": "^5.0.0",
     "grunt-sass": "^2.0.0",
     "grunt-ts": "^6.0.0-beta.16",
+    "jasmine-spec-reporter": "^4.2.1",
     "lite-server": "^2.3.0"
   }
 }

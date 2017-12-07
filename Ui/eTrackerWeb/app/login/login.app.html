@@ -9,13 +9,13 @@
         <input type="password" id="password" ng-model="vm.user.Password" class="form-control" placeholder="Password" required>
         <div id="remember" class="checkbox">
             <label>
-                        <input type="checkbox" value="remember-me"> Remember me
+                        <input id="checkBoxRememberMe" type="checkbox" value="remember-me"> Remember me
                     </label>
         </div>
         <!-- <div ng-show="!vm.isValidUser" class="alert alert-danger">
            {{vm.inValidUserText}}
         </div> -->
-        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign In</button>
+        <button id="signIn" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign In</button>
     </form>
     <!-- /form -->
     <a href="#" class="forgot-password">
