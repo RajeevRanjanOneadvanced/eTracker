@@ -1,4 +1,5 @@
-import { $, $$, browser, by, By, element, ExpectedConditions } from "protractor";
+import { $, $$, browser, by, By, element, ElementArrayFinder, ElementFinder,
+     ExpectedConditions, promise } from "protractor";
 import protractor = require("protractor");
 import { WebDriver } from "selenium-webdriver";
 
@@ -10,11 +11,11 @@ export class LoginPageObject {
         browser.waitForAngular();
     }
 
-    getLoginButtonText() {
+    getLoginButtonText(): promise.Promise<string> {
         return this.getLoginButton().getText();
     }
 
-    private getLoginButton() {
+    private getLoginButton(): ElementFinder {
         return element(by.id("signIn"));
     }
 

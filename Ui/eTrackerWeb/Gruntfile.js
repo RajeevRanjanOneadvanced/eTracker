@@ -2,6 +2,7 @@ module.exports = function (grunt) {
     "use strict";
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        noColor:false,
         sass: {
             options: {
                 sourceMap: true
@@ -27,7 +28,7 @@ module.exports = function (grunt) {
                 configFile: "test/conf.js",
 
                 // Do you want the output to use fun colors?
-                noColor: true,
+                noColor: false,
 
                 // Set to true if you would like to use the Protractor command line debugging tool
                 // debug: true,
