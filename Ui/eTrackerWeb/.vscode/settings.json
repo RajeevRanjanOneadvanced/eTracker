@@ -11,5 +11,6 @@
         "*.csproj": true,
         "*.csproj.*": true,
         "*.config": true
-    }
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

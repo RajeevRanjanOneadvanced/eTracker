@@ -28,7 +28,7 @@ module.exports = function (grunt) {
                 configFile: "test/conf.js",
 
                 // Do you want the output to use fun colors?
-                noColor: false,
+                noColor: true,
 
                 // Set to true if you would like to use the Protractor command line debugging tool
                 // debug: true,
