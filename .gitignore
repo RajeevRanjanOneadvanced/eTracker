@@ -38,3 +38,4 @@ bin
 *.js
 *.map
 /Ui/eTrackerWeb/.vscode
+/Ui/eTrackerWeb/.vscode/*.json
