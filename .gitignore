@@ -39,3 +39,6 @@ bin
 *.map
 /Ui/eTrackerWeb/.vscode
 /Ui/eTrackerWeb/.vscode/*.json
+/.vscode
+/.vscode/*.json
+/.vscode
