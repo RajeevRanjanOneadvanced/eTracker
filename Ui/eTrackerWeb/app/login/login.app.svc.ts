@@ -1,6 +1,6 @@
  module etracker.services {
     export interface ISignInDataService {
-        signIn(): ng.resource.IResourceClass<IUserResource>;
+        signIn():ng.resource.IResourceClass<IUserResource>;
     }
     // tslint:disable-next-line:no-empty-interface
     interface IUserResource extends ng.resource.IResource<etracker.interfaces.ITestuser> {}
